@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="project-changer">
+    <output-path>$PROJECT_DIR$/out/artifacts/project_changer</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="pl.lukaszgo.Main" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="project-changer.jar">
+        <element id="module-output" name="project-changer" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
