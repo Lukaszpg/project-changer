@@ -8,7 +8,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -16,7 +15,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Tooltip;
 import pl.lukaszgo.action.ProjectFileWriteAction;
 import pl.lukaszgo.action.UpdaterAction;
 
@@ -52,6 +50,21 @@ public class Controller {
     }
 
     @FXML
+    private void deleteCurrentSelectedProject(ActionEvent event) {
+        File file = new File(Settings.PROJECT_CHANGER_PATH + "/" + projectSelectionBox.getValue());
+
+        if(Settings.DEBUG) {
+            System.out.println("File to delete path: " + file.getAbsolutePath());
+        }
+
+        if(file.exists()) {
+            file.delete();
+            System.out.println("File deleted.");
+            initialize();
+        }
+    }
+
+    @FXML
     private void initialize() {
         projectNames = new ArrayList<>();
         getCurrentSelectedProject();
@@ -61,7 +74,7 @@ public class Controller {
     }
 
     private void getCurrentSelectedProject() {
-        List<String> list = new ArrayList<>();
+        List<String> list;
 
         try (BufferedReader br = Files.newBufferedReader(Paths.get(Settings.DB_SCHEMAS_FILE_PATH))) {
             list = br.lines().collect(Collectors.toList());
@@ -72,7 +85,7 @@ public class Controller {
         }
     }
 
-    private void setCurrentSelectedProjectInSelectionBox() {;
+    private void setCurrentSelectedProjectInSelectionBox() {
         projectSelectionBox.setValue(currentSelectedProject);
     }
 

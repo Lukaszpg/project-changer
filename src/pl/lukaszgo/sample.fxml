@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="266.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lukaszgo.Controller">
    <children>
-      <ChoiceBox fx:id="projectSelectionBox" layoutX="12.0" layoutY="14.0" prefHeight="25.0" prefWidth="242.0" />
+      <ChoiceBox fx:id="projectSelectionBox" layoutX="12.0" layoutY="14.0" prefHeight="25.0" prefWidth="203.0" />
       <Button fx:id="startButton" layoutX="12.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleStartButton" prefHeight="168.0" prefWidth="242.0" text="MAKE IT RAIN">
          <font>
             <Font name="System Bold" size="28.0" />
@@ -16,5 +16,6 @@
       </Button>
       <CheckBox fx:id="isBeta" layoutX="12.0" layoutY="80.0" mnemonicParsing="false" text="Trzy.Zero" />
       <CheckBox fx:id="updaterCheckbox" layoutX="11.0" layoutY="55.0" mnemonicParsing="false" text="Launch updater" />
+      <Button layoutX="220.0" layoutY="13.0" mnemonicParsing="false" onAction="#deleteCurrentSelectedProject" prefHeight="25.0" prefWidth="25.0" style="-fx-graphic: &quot;http://i.imgur.com/ieBxBjl.png&quot;; -fx-background-size: 15px 15px;" />
    </children>
 </Pane>
